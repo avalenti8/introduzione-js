@@ -1,8 +1,18 @@
 'use strict';
 
-let name = prompt("Con chi sto parlando");
+let nome = prompt("Qual'è il tuo nome?");
+let cognome = prompt("Qual'è il tuo cognome?");
+let età = prompt("Quanti anni hai?");
+let func = (nome, cognome, età) => alert("Ciao " + nome + " " + cognome + ": hai " + età + " anni");
 
-alert("Ciao " + name);
+func(nome, cognome,età);
+
+let message = (età < 10) ? "hey ma sei ancora un bimbo!" :
+  (età < 18) ? "Sei un adolescente" :
+  (età > 18) ? "ormai sei adulto":
+  "se non vuoi dirmelo ok, però calmati";
+
+alert(message);
 
 alert("Ora ti farò una domanda di cruciale importanza");
 alert("Se rispondi di no vieni immediatamente bruciato al rogo");
@@ -10,10 +20,16 @@ let string = "vai " + "uomo";
 alert("Se dici si sei una persona saggia, " + string);
 let hobby = prompt("Ti piace il calcio?");
 
-let conf = confirm("Se hai mai giocato a calcio clicca Ok, altrimenti Annulla");
+let football = prompt("hai mai giocato a calcio?");
 
-let goals = prompt("Nel caso tu avessi giocato, quanti goal hai fatto in carriera?");
-
-alert("mm, solo " + goals + " goal...");
-
-alert("Pensa che io ne ho fatti all'incirca " + "5" + "0");
+if(football == "si" || "Si"){
+    let goals = prompt("quanti goal hai fatto in carriera?");
+    if(goals >= 50){
+        alert("mi hai battuto... io solo 50");
+    }else{
+        alert("mm, solo " + goals + " goal...");
+        alert("Pensa che io ne ho fatti all'incirca 50");
+    }
+}else{
+    alert("non sai che ti sei perso :)");
+}
